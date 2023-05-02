@@ -103,16 +103,10 @@ var MIN_HEIGHT = 1080;
       };
     });
 
-    setImageUploads(
-      files.map((file) => ({
-        file,
-        preview: URL.createObjectURL(file),
-        caption: '',
-        credit: '',
-        model: '',
-      }))
-    );
-   
+   var image =files.map((file) => ({ file, preview: URL.createObjectURL(file),caption: '',credit: '',model: '',
+  })
+  )
+  setImageUploads((prevImages) => [...prevImages, ...image]);
   };
 
   const handleDeleteClick = (index) => {
