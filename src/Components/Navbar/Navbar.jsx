@@ -47,19 +47,19 @@ if (user === null){
             <div className="navbar-nav">
               <ul className='navbar-nav'>
                 <li className='"nav-item'>
-                  <Link to={"/"} className='nav-link m-2 Home'>Home</Link>
+                  <Link to={"/"} className='nav-link m-2 Home fw'>Home</Link>
                 </li>
                 <li className='"nav-item f-1'>
-                  <a href="https://wmhindia.com/category/magazine/" className='nav-link m-2 text-dark'>Magazine</a>
+                  <a href="https://wmhindia.com/category/magazine/" className='nav-link m-2 text-dark fw'>Magazine</a>
                 </li>
                 <li className='"nav-item f-1' id="dropdownMenuButton">
-                  <a href="https://wmhindia.com/category/blog/" className='nav-link m-2 text-dark'>Blog</a>
+                  <a href="https://wmhindia.com/category/blog/" className='nav-link m-2 text-dark fw'>Blog</a>
                 </li>
                 <li className='"nav-item f-1'>
-                  <a href="https://wmhindia.com/category/interviews/" className='nav-link m-2 text-dark'>Interviews</a>
+                  <a href="https://wmhindia.com/category/interviews/" className='nav-link m-2 text-dark fw'>Interviews</a>
                 </li>
                 <li className='"nav-item f-1' id="dropdownMenuButton">
-                  <a href="https://wmhindia.com/category/video/" className='nav-link m-2 text-dark'>Talk Show</a>
+                  <a href="https://wmhindia.com/category/video/" className='nav-link m-2 text-dark fw'>Talk Show</a>
                 </li>
               </ul>
             </div>
@@ -92,35 +92,35 @@ return (
             <div className="navbar-nav">
               <ul className='navbar-nav'>
                 <li className='"nav-item'>
-                  <Link to={"/"} className='nav-link m-2 Home'>Home</Link>
+                  <Link to={"/"} className='nav-link m-2 Home fw'>Home</Link>
                 </li>
                 <li className='"nav-item f-1'>
-                  <a href="https://wmhindia.com/category/magazine/" className='nav-link m-2 text-dark'>Magazine</a>
+                  <a href="https://wmhindia.com/category/magazine/" className='nav-link m-2 text-dark fw'>Magazine</a>
                 </li>
                 <li className='"nav-item f-1' id="dropdownMenuButton">
-                  <a href="https://wmhindia.com/category/blog/" className='nav-link m-2 text-dark'>Blog</a>
+                  <a href="https://wmhindia.com/category/blog/" className='nav-link m-2 text-dark fw'>Blog</a>
                 </li>
                 <li className='"nav-item f-1'>
-                  <a href="https://wmhindia.com/category/interviews/" className='nav-link m-2 text-dark'>Interviews</a>
+                  <a href="https://wmhindia.com/category/interviews/" className='nav-link m-2 text-dark fw'>Interviews</a>
                 </li>
                 <li className='"nav-item f-1' id="dropdownMenuButton">
-                  <a href="https://wmhindia.com/category/video/" className='nav-link m-2 text-dark'>Talk Show</a>
+                  <a href="https://wmhindia.com/category/video/" className='nav-link m-2 text-dark fw'>Talk Show</a>
                 </li>
                 <li className='"nav-item'>
-                  <Link to={"/signup"} className='nav-link m-2 text-dark'>Create User</Link>
+                  <Link to={"/signup"} className='nav-link m-2 text-dark fw'>Create User</Link>
                 </li>
                 <li className='"nav-item'>
-                  <Link to={"/dashboard"} className='nav-link m-2 text-dark'>Dashboard</Link>
+                  <Link to={"/dashboard"} className='nav-link m-2 text-dark fw'>Dashboard</Link>
                 </li>
               </ul>
             </div>
             </div>
          <div className='col-lg-4 mt-4'>
           <div className='row'>
-         <div className='col-lg-8'> <p className="text-end me-4 mt-2.4 text-dark">Hello, {name}</p></div>
+         <div className='col-lg-8'> <p className="text-end me-4 mt-2.4 text-dark fw">Hello, {name}</p></div>
           
            
-            <div className='col-lg-4'><Link to={"/"} className="btn btnxd mt-2 d-inline m-2" onClick={() => signOut(auth)}>Logout</Link></div>
+            <div className='col-lg-4'><Link to={"/"} className="btn btnxd mt-2 d-inline m-2 fw" onClick={() => signOut(auth)}>Logout</Link></div>
             </div>
             </div>
           </div>
