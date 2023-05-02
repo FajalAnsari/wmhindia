@@ -1,0 +1,63 @@
+
+section{
+    background-image: url('../../images/pic.png');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 
+    700px !important;
+
+}
+.gradient-custom-3 {
+    /* fallback for old browsers */
+    background: #84fab0;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(0, 0, 0, 0.959), rgba(255, 0, 0, 0.363));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.979), rgba(0, 0, 0, 0.397))
+    }
+    .gradient-custom-4 {
+    /* fallback for old browsers */
+    background: #84fab0;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #000000e8, rgba(255, 0, 0, 0.363));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: linear-gradient(to right, rgba(255, 0, 0, 0.623), rgba(255, 0, 0, 0.945)) */
+    }
+
+    .card{
+        border-radius: 15px; 
+        width: 75%;
+    }
+    .btn-danger{
+        color: #fff !important;
+    }
+
+/* responsiveness */
+/* Samsung Gallexy s8+ */
+@media only screen and (min-width : 360px) and (max-width  : 389px ) {
+    #responsives1 .userinput {
+        width: 258px !important;
+    }
+    .kk {
+        width: 167px ;
+        margin-top: 16px; 
+        margin-left: 10px;
+       }
+
+}
+
+    @media (max-width: 390px) {
+        .card {
+            border-radius: 15px;
+    width: 91%;
+    margin: 20px;
+        }
+       #responsives1 .userinput {
+        /* width: 282px !important; */
+    }
+}
+

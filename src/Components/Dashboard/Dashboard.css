@@ -1,0 +1,82 @@
+
+.card-image{
+   height: 250px;
+   width: 500px;
+}
+.s-1{
+   margin-top: 5px;
+}
+#react-paginate ul {
+   display: inline-block;
+   margin-left: 20px;
+   padding-left: 0;
+}
+
+#react-paginate li {
+   display: inline-block;
+   border: 1px solid rgb(224, 224, 224);
+   color: #a51919;
+   cursor: pointer;
+   margin-right: 3px;
+   border-radius: 5px;
+   margin-bottom: 5px;
+}
+
+ #react-paginate li a {
+     padding: 5px 10px;
+     display: inline-block;
+     color: #a51919;
+     outline: none;
+ }
+
+#react-paginate li.active {
+   background: rgb(224, 224, 224);
+   outline: none;
+}
+.form-control-dash {
+  
+    width: 100%;
+    border: 1px solid #ced4da;
+}
+select:focus > option:checked { 
+   background: #292b2c !important;
+   color: #fff;
+}
+
+
+/* // If you also want to theme your text inputs: */
+/* input {
+  background: #292b2c !important;
+  color: rgba(255, 0, 0, 0.719) !important;
+} */
+
+
+/* Change the link color on hover */
+
+
+
+select option:hover{background-color:yellow;}
+
+.form-control-rend{
+   padding: .375rem .75rem
+}
+@media (max-width: 480px) {
+   .form-control-dash {
+      margin-left: -97px;
+       width: 300px;
+       border: 1px solid #ced4da;
+   }
+   .dates{
+      width: 350%;
+      margin-left: -98px;
+   }
+   #download-btn{
+      float: none !important;
+      width: 25% !important;
+      position: relative;
+      right: -196px;
+      margin: 11px 14px;
+   }
+   
+}
+

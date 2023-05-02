@@ -1,0 +1,118 @@
+body{
+    background-color: black;
+}
+.preview img{
+    height: 500px;
+    width: 400px;
+   
+}
+
+.inputfields{
+    display: inline-block;
+    width: 500px;
+}
+
+.preview{
+    margin: 10px;
+    background-color: #292b2c;
+   
+    border-radius: 15px;
+}
+
+
+ .delete-btn{
+    position: relative;
+    left: 120px;
+    bottom: 50px;
+    height: 50px;
+    width: 60px;
+    font-size: 20px;
+ }
+ .userdata{
+    margin-top: 10px;
+ }
+ .loadata {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 15px;
+    margin: auto;
+  }
+  
+  .loadata:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .deta{
+    background-color: rgb(242,242,242);
+  }
+
+  /* Responsiveness  */
+
+  @media only screen and (min-width: 360px) and (max-width: 360px){
+  .preview {
+    width: 351px !important;
+    margin: 7px 3px 3px -30px !important;
+  }
+    }
+
+    @media only screen and (min-width: 393px) and (max-width: 393px){
+      h1{
+        color: red;
+      }
+      .navbar-brand img{
+        height: 75px;
+      margin-left: 0%;
+      }
+      #responsives1 .userinput {
+        width: 258px !important;
+    }
+    }
+
+  /* iphone 12pro */
+  @media (max-width: 390px) { 
+  .delete-btn {
+    position: relative;
+    left: 61px;
+    bottom: 6px;
+    height: 41px;
+    width: 51px;
+    font-size: 29px;
+    background: none;
+    border: none;
+}
+  }
+
+
+  @media screen and (min-width: 768px) and (max-width:1920px){
+    #responsive{
+      width: 60% !important;
+      
+    }
+  }
+  @media screen and (min-width: 375px) and (max-width:414px){
+    #responsive {
+      width: 100% !important;
+      
+    }
+    .container{
+      width: 100% !important;
+    }
+  }
+
+  @media screen and (min-width: 375px) and (max-width:540px){
+    #responsives1 {
+      width: 100% !important;
+      margin-top: 8px;
+    }
+    #responsives2 {
+      width: 94% !important;
+    margin: 19px auto;
+    }
+  }
+  
+
+  /* Responsive */
+  
+
+  
