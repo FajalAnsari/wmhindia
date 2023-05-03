@@ -99,13 +99,15 @@
 /*responsive */
 
 /*Nest Hub Max*/
-@media only screen and (min-width: 1280px) and (max-width: 1280px){
+@media only screen and (min-width: 1280px) and (max-width: 1285px){
   .userinput{
-    width: 200px !important;
+    width: 250px !important;
+    margin-left: 60px;
   }
   .file-input__label {
     margin-top: 5px;
     width: 135px;
+    margin-left: -50px;
   }
   #responsives1{
     margin-left: -20px;
@@ -166,16 +168,17 @@ margin-left: 50px;
 
 
 /*Nest Hub*/
-@media only screen and (min-width: 1024px) and (max-width: 1024px){
+@media only screen and (min-width: 1024px) and (max-width: 1030px){
   .userinput{
-    width: 180px !important;
+    width: 200px !important;
   }
   .file-input__label {
     margin-top: 5px;
     width: 135px;
+    margin-left: -50px;
   }
   #responsives1{
-    margin-left: -20px;
+    margin-left: 0px;
   }
   .navbar_home {
     padding: 1.8%;
@@ -303,7 +306,7 @@ margin-left: 50px;
 }
 
 /*iphone XR*/
-@media only screen and (min-width: 414px) and (max-width: 414px){
+@media only screen and (min-width: 414px) and (max-width: 420px){
   #responsives1 .uniq{
     display: inline-block;
   }
@@ -329,9 +332,6 @@ margin-left: 50px;
 .p-5{
   margin-left: -10px;
 }
-.btn-block{
-  width: 82% !important;
-}
 .dates{
   width: 320%;
 }
@@ -342,7 +342,7 @@ margin-left: 50px;
   }
 
   /*Galaxy Fold*/
-  @media only screen and (min-width: 280px) and (max-width: 280px){
+  @media only screen and (min-width: 280px) and (max-width: 285px){
     h1{
       color: #a51919;
     }
@@ -399,7 +399,7 @@ margin-left: 50px;
 
 
 /*Pixel 5*/
-  @media only screen and (min-width: 393px) and (max-width: 393px){
+  @media only screen and (min-width: 393px) and (max-width: 399px){
     #responsives1 .uniq{
       display: inline-block;
     }
@@ -426,10 +426,6 @@ margin-left: 50px;
   .p-5{
     margin-left: -15px;
   }
-  .btn-block{
-    width: 82% !important;
-    margin-left: 25px;
-  }
   .success1 {
     position: absolute;
     margin-left: -32px !important;
@@ -437,17 +433,18 @@ margin-left: 50px;
     }
 
      /*sumsung galaxy s8+*/
-     @media only screen and (min-width: 360px) and (max-width: 360px){
+     @media only screen and (min-width: 360px) and (max-width: 366px){
       .card {
         width: 90% !important;
         margin-left: 25px;
     }
     .p-5{
-      margin-left: -28px;
+      margin-left: -13px;
     }
-    .btn-block{
-      width: 82% !important;
-      margin-left: 35px;
+    .file-input__label{
+      margin-top: 80px;
+      margin-left: -170px;
+      width: 140px;
     }
     .success1 {
       position: absolute;
@@ -456,7 +453,7 @@ margin-left: 50px;
      }
 
     /*Surface Duo*/
-    @media only screen and (min-width: 540px) and (max-width: 540px){
+    @media only screen and (min-width: 540px) and (max-width: 546px){
       #responsives1 .uniq{
         display: inline-block;
       }
@@ -500,19 +497,16 @@ margin-left: 50px;
 
 
 /*iphone se*/
-      @media only screen and (min-width: 375px) and (max-width: 375px){
+      @media only screen and (min-width: 375px) and (max-width: 380px){
         .previews{
           margin-left: -10px;
 
         }
         .p-5 {
-          margin-left: -17px;
+          margin-left: -10px;
       }
       .sign1{
         margin-left: -20px;
-      }
-      .btn-block{
-        width: 82% !important;
       }
       .dates{
         width: 335%;
@@ -524,7 +518,7 @@ margin-left: 50px;
         }
   
 /*iphone 12 pro*/
-        @media only screen and (min-width: 390px) and (max-width: 390px){
+        @media only screen and (min-width: 390px) and (max-width: 392px){
           .btn-success {
             width: 82% !important;
           }
@@ -535,12 +529,11 @@ margin-left: 50px;
         .p-5{
           margin-left: -35px;
         }
-        .btn-block{
-          width: 82% !important;
-          margin-left: 20px;
-        }
         .dates{
           width: 294%;
+        }
+        .preview {
+          margin: 0;
         }
         .success1 {
           position: absolute;
@@ -549,7 +542,7 @@ margin-left: 50px;
           }
 
 /*Sumsung galaxy as1/71*/
-    @media only screen and (min-width: 412px) and (max-width: 412px){
+    @media only screen and (min-width: 412px) and (max-width: 418px){
       #responsives1 .uniq{
         display: inline-block;
       }
@@ -572,10 +565,6 @@ margin-left: 50px;
     .p-5{
       margin-left: -15px;
     }
-    .btn-block{
-      width: 82% !important;
-      margin-left: 25px;
-    }
     .dates{
       width: 320%;
     }
@@ -586,7 +575,7 @@ margin-left: 50px;
       }
 
 /*Surface Pro 7*/
-      @media only screen and (min-width: 912px) and (max-width: 912px){
+      @media only screen and (min-width: 912px) and (max-width: 918px){
         .res1{
           width: 100% !important;
           margin-left: 95px;
@@ -646,7 +635,7 @@ margin-left: 50px;
       }
 
 /*laptop*/
-@media only screen and (min-width: 1496px) and (max-width: 1600px){
+@media only screen and (min-width: 1496px) and (max-width: 1500px){
   h1{
     color: #a51919;
   }
@@ -662,7 +651,7 @@ margin-left: 50px;
 }
 
 /*ipad air*/
-      @media only screen and (min-width: 820px) and (max-width: 820px){
+      @media only screen and (min-width: 820px) and (max-width: 825px){
         .res1{
           width: 100% !important;
           margin-left: 55px;
@@ -710,10 +699,6 @@ margin-left: 50px;
       margin-left: 25px;
   }
  
-  .btn-block{
-    width: 82% !important;
-    margin-left: 25px;
-  }
   .p-2{
     width: 220%;
     margin-left: -90px;
@@ -733,7 +718,7 @@ margin-left: 50px;
 
 
 /*iPad mini*/
-      @media only screen and (min-width: 768px) and (max-width: 768px){
+      @media only screen and (min-width: 768px) and (max-width: 775px){
         .res1{
           width: 100% !important;
           margin-left: 27px;
