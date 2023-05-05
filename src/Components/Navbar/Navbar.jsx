@@ -63,6 +63,8 @@ if (user === null){
                 </li>
               </ul>
             </div>
+            <p className='mt-3 back'><Link to={"https://wmhindia.com/"} className="btn btnxd mt-2 d-inline m-2"><i class="bi bi-arrow-left-circle"></i><span> Back</span> </Link></p>
+           
           </div>
           </div>
       </nav>
