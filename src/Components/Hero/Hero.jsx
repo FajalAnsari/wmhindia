@@ -141,13 +141,13 @@ var MIN_HEIGHT = 1080;
 
 
 //     //email send start
-//     emailjs.sendForm('service_us5ym9h', 'template_h1u66ie', form.current, 'oYkFvry-qBnIFFcph')
-//       .then((result) => {
-//         console.log(result.text);
-//         console.log("email has been sent");
-//       }, (error) => {
-//         console.log(error.text);
-//       });
+    emailjs.sendForm('service_h0myn0a', 'template_2fpyt68', form.current, 'kFsR4eOhO4-8BbO6h')
+      .then((result) => {
+        console.log(result.text);
+        console.log("email has been sent");
+      }, (error) => {
+        console.log(error.text);
+      });
 // //email send end
 
 

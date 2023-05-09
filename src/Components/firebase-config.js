@@ -33,7 +33,7 @@ export const FirebaseProvider = (props) => {
   }, []);
 
   const listAllUsers = () => {
-    return getDocs(collection(db, "imageUploads"));
+    return getDocs(collection(db, "imageUploadsindia"));
   };
 
 
