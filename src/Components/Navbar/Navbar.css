@@ -76,6 +76,9 @@ display: block;
   width: 92.5% !important;
   padding: 1.7% !important;
 }
+.wmh_logo{
+  height: 65px !important;
+}
 }
 
 
@@ -95,6 +98,9 @@ display: block;
    .navbar_home {
     width: 100% !important;
     margin-left: 47px;
+}
+.wmh_logo{
+  height: 65px !important;
 }
 }
 
@@ -116,6 +122,9 @@ display: block;
     width: 100% !important;
     margin-left: 47px;
 }
+.wmh_logo{
+  height: 65px !important;
+}
 }
 
 /* ipad air */
@@ -136,7 +145,9 @@ height: 110px !important;
   width: 100% !important;
   margin-left: 47px;
 }
-
+.wmh_logo{
+  height: 65px !important;
+}
 }
 
 
@@ -154,6 +165,9 @@ height: 110px !important;
   margin-left: 34px;
   margin-top: -10px;
 }
+.wmh_logo{
+  height: 65px !important;
+}
 }
 
 /* Samsung Glaxy S20 UItra */
@@ -164,6 +178,9 @@ height: 110px !important;
 }
 .navbar_home {
   width: 346% !important;
+}
+.wmh_logo{
+  height: 65px !important;
 }
 }
 
@@ -181,6 +198,9 @@ position: absolute;
 margin-top: 15px;
 margin-left: -4%;
 }
+.wmh_logo{
+  height: 65px !important;
+}
 }
 /* Samsung fold */
 @media only screen and (min-width: 280px) and (max-width: 280px){
@@ -196,6 +216,9 @@ margin-left: -4%;
 .back{
 display: none;
 }
+.wmh_logo{
+  height: 65px !important;
+}
 }
 
 
@@ -206,6 +229,9 @@ display: none;
 }
 .back{
  display: none;
+}
+.wmh_logo{
+  height: 65px !important;
 }
 }
 
@@ -221,6 +247,9 @@ margin-left: 20px !important;
 }
 .back{
 display: none;
+}
+.wmh_logo{
+  height: 65px !important;
 }
 }
 
@@ -252,7 +281,9 @@ width: 200px;
 .back{
  display: none;
 }
-
+.wmh_logo{
+  height: 65px !important;
+}
 }
 
 

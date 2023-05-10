@@ -450,7 +450,7 @@ margin-left: 50px;
     }
 
      /*sumsung galaxy s8+*/
-     @media only screen and (min-width: 360px) and (max-width: 366px){
+     @media only screen and (min-width: 360px) and (max-width: 350px){
       .card {
         width: 90% !important;
         margin-left: 25px;
