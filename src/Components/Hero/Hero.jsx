@@ -33,7 +33,7 @@ function App() {
     const files = Array.from(event.target.files);
 
   //   image validation start
-      if (!files[0].name.match(/\.(jpg|jpeg|png|gif|bmp|tiff|psd|ai|eps|svg|raw)$/)) {
+      if (!files[0].name.match(/\.(jpg|jpeg|png|gif|bmp|tiff|psd|ai|eps|svg|raw|jfif)$/)) {
         toast.warning('Only image formats are allowed !');
        return false;
       }
@@ -62,7 +62,7 @@ if (fi.files.length > 10){
 
   // CHECK IF ITS AN IMAGE FILE.
   // TO GET THE IMAGE WIDTH AND HEIGHT, WE'LL USE fileReader().
-  if (fileExtension === 'jpg' || fileExtension === 'jpeg' || fileExtension === 'png' || fileExtension === 'gif' || fileExtension === 'bmp' || fileExtension === 'tiff' || fileExtension === 'psd' || fileExtension === 'ai' || fileExtension === 'eps' || fileExtension === 'svg' || fileExtension === 'raw') {
+  if (fileExtension === 'jpg' || fileExtension === 'jpeg' || fileExtension === 'png' || fileExtension === 'gif' || fileExtension === 'bmp' || fileExtension === 'tiff' || fileExtension === 'psd' || fileExtension === 'ai' || fileExtension === 'eps' || fileExtension === 'svg' || fileExtension === 'raw' || fileExtension === 'jfif') {
      readImageFile(fi.files.item(i));             // GET IMAGE INFO USING fileReader().
   }
   
