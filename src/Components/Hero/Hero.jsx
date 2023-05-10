@@ -42,56 +42,68 @@ function App() {
 
 //pixel validation for images
 var fi = document.getElementById('file-input');
-if (fi.files.length > 0) {      // FIRST CHECK IF ANY FILE IS SELECTED.
+if (fi.files.length > 10){
+  toast.warning("maximum 10 images allowed!");
+  return false;
+} else {
+  if(imageUploads.length > 9) {
+    toast.warning("maximum 10 images are allowed!");
+    return false;
+  }
+  else {
+ // FIRST CHECK IF ANY FILE IS SELECTED.
    
-    for (var i = 0; i <= fi.files.length - 1; i++) {
-        var fileName, fileExtension;
+ for (var i = 0; i <= fi.files.length - 1; i++) {
+  var fileName, fileExtension;
 
-        // FILE NAME AND EXTENSION.
-        fileName = fi.files.item(i).name;
-        fileExtension = fileName.replace(/^.*\./, '');
+  // FILE NAME AND EXTENSION.
+  fileName = fi.files.item(i).name;
+  fileExtension = fileName.replace(/^.*\./, '');
 
-        // CHECK IF ITS AN IMAGE FILE.
-        // TO GET THE IMAGE WIDTH AND HEIGHT, WE'LL USE fileReader().
-        if (fileExtension === 'jpg' || fileExtension === 'jpeg' || fileExtension === 'png' || fileExtension === 'gif' || fileExtension === 'bmp' || fileExtension === 'tiff' || fileExtension === 'psd' || fileExtension === 'ai' || fileExtension === 'eps' || fileExtension === 'svg' || fileExtension === 'raw') {
-           readImageFile(fi.files.item(i));             // GET IMAGE INFO USING fileReader().
-        }
-        
-    }
+  // CHECK IF ITS AN IMAGE FILE.
+  // TO GET THE IMAGE WIDTH AND HEIGHT, WE'LL USE fileReader().
+  if (fileExtension === 'jpg' || fileExtension === 'jpeg' || fileExtension === 'png' || fileExtension === 'gif' || fileExtension === 'bmp' || fileExtension === 'tiff' || fileExtension === 'psd' || fileExtension === 'ai' || fileExtension === 'eps' || fileExtension === 'svg' || fileExtension === 'raw') {
+     readImageFile(fi.files.item(i));             // GET IMAGE INFO USING fileReader().
+  }
+  
+}
 
-   var MIN_WIDTH = 1920;
+var MIN_WIDTH = 1920;
 var MIN_HEIGHT = 1080;
 
-    // GET THE IMAGE WIDTH AND HEIGHT USING fileReader() API.
-    function readImageFile(file) {
-        var reader = new FileReader(); // CREATE AN NEW INSTANCE.
+// GET THE IMAGE WIDTH AND HEIGHT USING fileReader() API.
+function readImageFile(file) {
+  var reader = new FileReader(); // CREATE AN NEW INSTANCE.
 
-        reader.onload = function (e) {
-            var img = new Image();      
-            img.src = e.target.result;
+  reader.onload = function (e) {
+      var img = new Image();      
+      img.src = e.target.result;
 
-            img.onload = function () {
-                var w = this.width;
-                var h = this.height;
-           if (img.width < MIN_WIDTH || img.height < MIN_HEIGHT) {
-              toast.warning(file.name +" is invalid image please upload new image !");
-              document.getElementById("mink").disabled = true;
-              document.getElementById("file-input").disabled = true;
-              document.getElementById("slects").style.opacity = "0.3";
-              document.getElementById("fileInfo").style.display = "block";
-              setErrors(`Image must be at least ${MIN_WIDTH}x${MIN_HEIGHT} pixels`);
-           } else {
- 
-            console.log("not done");
-          }
-            }
-        };
-        reader.readAsDataURL(file);
+      img.onload = function () {
+
+     if (img.width < MIN_WIDTH || img.height < MIN_HEIGHT) {
+        toast.warning(file.name +" is invalid image please upload new image !");
+        document.getElementById("mink").disabled = true;
+        document.getElementById("file-input").disabled = true;
+        document.getElementById("slects").style.opacity = "0.3";
+        document.getElementById("fileInfo").style.display = "block";
+        setErrors(`Image must be at least ${MIN_WIDTH}x${MIN_HEIGHT} pixels`);
+     } else {
+
+      console.log("not done");
     }
+      }
+  };
+  reader.readAsDataURL(file);
 }
+
 
 //end pixel validation 
 
+  }
+}
+
+  
 
 
     const previews = [];
@@ -155,6 +167,21 @@ var MIN_HEIGHT = 1080;
       alert("Please fill name and email before uploading.");
       return;
     }
+
+    // this condition for radio option
+    var option = document.getElementsByName("inlineRadioOptions");
+    if(document.getElementById('summer').checked) { 
+      // alert("checked summer"); 
+  } 
+  else if(document.getElementById('winter').checked) { 
+    //  alert("checked winter");  
+  } 
+  else if(!option.checked){ 
+      alert("You have not selected any option"); 
+      return false;
+  } 
+    
+
     setImageUploads([]);
     setUploadSuccess(false);
 
@@ -325,6 +352,17 @@ var MIN_HEIGHT = 1080;
                           </div> 
                         </div>                         
                       ))}
+                    </div>
+                     <div className="radio-btn p-3">
+                      <span className="fs-6 fw-bold  text-success">Submitter holds the copyright or has the authority to submit from the copyright owner?</span>
+                      <div className="form-check form-check-inline ms-2">
+                        <input className="form-check-input" type="radio" name="inlineRadioOptions"  id="summer" value="option1" required />
+                        <label className="form-check-label" htmlFor="inlineRadio1">Yes</label>
+                      </div>
+                      <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="winter" value="option2" required />
+                        <label className="form-check-label" htmlFor="inlineRadio2">No</label>
+                      </div>
                     </div>
                     <button className="btn btn-success float-end w-100" type="submit" id="mink" onClick={handleUploadClick}>Upload</button>        
                   </div>

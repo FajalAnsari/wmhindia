@@ -107,7 +107,7 @@
   .file-input__label {
     margin-top: 5px;
     width: 135px;
-    margin-left: -50px;
+    margin-left: 10px;
   }
   #responsives1{
     margin-left: -20px;
@@ -150,8 +150,8 @@ width: 500px !important;
 margin-left: 50px;
 }
 .p-5{
-  width: 140%;
-  margin-left: -155px !important;
+  width: 100%;
+ 
 }
 
 .dates{
@@ -162,6 +162,9 @@ margin-left: 50px;
   position: absolute;
   width: 10% !important;
   margin-left: 85px !important;
+}
+.back{
+  margin-left: 180px;
 }
 }
 
@@ -196,7 +199,7 @@ margin-left: 50px;
 .btn-success {
   position: absolute;
   width: 61% !important;
-  margin-left: -51px;
+  margin-left: 60px;
   
 }
 .success1 {
@@ -206,7 +209,7 @@ margin-left: 50px;
 }
 .preview {
   width: 635px;
-  margin-left: -54px;
+  margin-left: 60px;
 }
 .preview img {
 width: 598px;
@@ -221,8 +224,10 @@ margin-left: 50px;
 }
 
 .dates{
-  width: 100%;
-  
+  width: 100%; 
+}
+.back{
+  margin-left: 60px;
 }
 }
 
@@ -339,6 +344,10 @@ margin-left: 50px;
   position: absolute;
   margin-left: -15px !important;
 }
+.p-3{
+  margin-left: -30px;
+  width: 90%;
+}
   }
 
   /*Galaxy Fold*/
@@ -395,6 +404,10 @@ margin-left: 50px;
   .success1 {
     margin-left: -95px !important;
   }
+  .p-3{
+    margin-left: -42px;
+    width: 138%;
+  }
     }
 
 
@@ -430,6 +443,10 @@ margin-left: 50px;
     position: absolute;
     margin-left: -32px !important;
   }
+  .p-3{
+    margin-left: -42px;
+    width: 95%;
+  }
     }
 
      /*sumsung galaxy s8+*/
@@ -449,6 +466,10 @@ margin-left: 50px;
     .success1 {
       position: absolute;
       margin-left: -22px !important;
+    }
+    .p-3{
+      margin-left: -45px;
+      width: 100%;
     }
      }
 
@@ -493,6 +514,10 @@ margin-left: 50px;
        width: 130px !important;
         
       }
+      .p-3{
+        margin-left: -42px;
+        width: 100%;
+      }
       }
 
 
@@ -514,6 +539,10 @@ margin-left: 50px;
       .success1 {
         position: absolute;
         margin-left: -10px !important;
+      }
+      .p-3{
+        margin-left: -42px;
+        width: 100%;
       }
         }
   
@@ -538,6 +567,10 @@ margin-left: 50px;
         .success1 {
           position: absolute;
           margin-left: -10px !important;
+        }
+        .p-3{
+          margin-left: -15px;
+          width: 85%;
         }
           }
 
@@ -571,6 +604,10 @@ margin-left: 50px;
     .success1 {
       position: absolute;
       margin-left: -22px !important;
+    }
+    .p-3{
+      margin-left: -30px;
+      width: 90%;
     }
       }
 
@@ -631,6 +668,10 @@ margin-left: 50px;
       position: absolute;
      width: 115px !important;
       
+    }
+    .p-3{
+      margin-left: -75px;
+      width: 130%;
     }
       }
 
@@ -713,6 +754,10 @@ margin-left: 50px;
    width: 100px !important;
     
   }
+  .p-3{
+    margin-left: -75px;
+    width: 140%;
+  }
       }
 
 
@@ -774,5 +819,9 @@ margin-left: 50px;
       position: absolute;
      width: 86px !important;
 
+    }
+    .p-3{
+      margin-left: -75px;
+      width: 100%;
     }
       }
