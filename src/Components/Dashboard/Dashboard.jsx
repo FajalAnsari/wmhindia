@@ -34,7 +34,7 @@ function Dashboard() {
   const usersPerPage = 4;
 
   const handleDeleteClick = (id,e) => {
-    let deletedata = doc(db, "imageUploads", id);
+    let deletedata = doc(db, "imageUploadsindia", id);
     deleteDoc(deletedata).then(() => {
     })
   }
