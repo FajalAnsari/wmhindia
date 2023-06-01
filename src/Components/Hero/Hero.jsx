@@ -15,10 +15,10 @@ function App() {
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [errors , setErrors] = useState(null);
-  const [error , setError] = useState(null);
+  const [errors, setErrors] = useState(null);
+  const [error, setError] = useState(null);
   const [setProgressval, getProgressval] = useState(0);
-  
+
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -28,23 +28,23 @@ function App() {
     setEmail(event.target.value);
   };
 
-  
+
   const handleImageChange = (event) => {
     const files = Array.from(event.target.files);
 
-  //   image validation start
-      if (!files[0].name.match(/\.(jpg|jpeg|png|gif|bmp|tiff|psd|ai|eps|svg|raw)$/)) {
-        toast.warning('Only image formats are allowed !');
-       return false;
-      }
-  // image validation end
-  
+    //   image validation start
+    if (!files[0].name.match(/\.(jpg|jpeg|png|gif|bmp|tiff|psd|ai|eps|svg|raw)$/)) {
+      toast.warning('Only image formats are allowed !');
+      return false;
+    }
+    // image validation end
 
-//pixel validation for images
-var fi = document.getElementById('file-input');
-if (fi.files.length > 0) {      // FIRST CHECK IF ANY FILE IS SELECTED.
-   
-    for (var i = 0; i <= fi.files.length - 1; i++) {
+
+    //pixel validation for images
+    var fi = document.getElementById('file-input');
+    if (fi.files.length > 0) {      // FIRST CHECK IF ANY FILE IS SELECTED.
+
+      for (var i = 0; i <= fi.files.length - 1; i++) {
         var fileName, fileExtension;
 
         // FILE NAME AND EXTENSION.
@@ -54,43 +54,43 @@ if (fi.files.length > 0) {      // FIRST CHECK IF ANY FILE IS SELECTED.
         // CHECK IF ITS AN IMAGE FILE.
         // TO GET THE IMAGE WIDTH AND HEIGHT, WE'LL USE fileReader().
         if (fileExtension === 'jpg' || fileExtension === 'jpeg' || fileExtension === 'png' || fileExtension === 'gif' || fileExtension === 'bmp' || fileExtension === 'tiff' || fileExtension === 'psd' || fileExtension === 'ai' || fileExtension === 'eps' || fileExtension === 'svg' || fileExtension === 'raw') {
-           readImageFile(fi.files.item(i));             // GET IMAGE INFO USING fileReader().
+          readImageFile(fi.files.item(i));             // GET IMAGE INFO USING fileReader().
         }
-        
-    }
 
-   var MIN_WIDTH = 1920;
-var MIN_HEIGHT = 1080;
+      }
 
-    // GET THE IMAGE WIDTH AND HEIGHT USING fileReader() API.
-    function readImageFile(file) {
+      var MIN_WIDTH = 1920;
+      var MIN_HEIGHT = 1080;
+
+      // GET THE IMAGE WIDTH AND HEIGHT USING fileReader() API.
+      function readImageFile(file) {
         var reader = new FileReader(); // CREATE AN NEW INSTANCE.
 
         reader.onload = function (e) {
-            var img = new Image();      
-            img.src = e.target.result;
+          var img = new Image();
+          img.src = e.target.result;
 
-            img.onload = function () {
-                var w = this.width;
-                var h = this.height;
-           if (img.width < MIN_WIDTH || img.height < MIN_HEIGHT) {
-              toast.warning(file.name +" is invalid image please upload new image !");
+          img.onload = function () {
+            var w = this.width;
+            var h = this.height;
+            if (img.width < MIN_WIDTH || img.height < MIN_HEIGHT) {
+              toast.warning(file.name + " is invalid image please upload new image !");
               document.getElementById("mink").disabled = true;
               document.getElementById("file-input").disabled = true;
               document.getElementById("slects").style.opacity = "0.3";
               document.getElementById("fileInfo").style.display = "block";
               setErrors(`Image must be at least ${MIN_WIDTH}x${MIN_HEIGHT} pixels`);
-           } else {
- 
-            console.log("not done");
-          }
+            } else {
+
+              console.log("not done");
             }
+          }
         };
         reader.readAsDataURL(file);
+      }
     }
-}
 
-//end pixel validation 
+    //end pixel validation 
 
 
 
@@ -103,10 +103,11 @@ var MIN_HEIGHT = 1080;
       };
     });
 
-   var image =files.map((file) => ({ file, preview: URL.createObjectURL(file),caption: '',credit: '',model: '',
-  })
-  )
-  setImageUploads((prevImages) => [...prevImages, ...image]);
+    var image = files.map((file) => ({
+      file, preview: URL.createObjectURL(file), caption: '', credit: '', model: '',
+    })
+    )
+    setImageUploads((prevImages) => [...prevImages, ...image]);
   };
 
   const handleDeleteClick = (index) => {
@@ -140,15 +141,15 @@ var MIN_HEIGHT = 1080;
   const handleUploadClick = () => {
 
 
-//     //email send start
-    emailjs.sendForm('service_h0myn0a', 'template_2fpyt68', form.current, 'kFsR4eOhO4-8BbO6h')
-      .then((result) => {
-        console.log(result.text);
-        console.log("email has been sent");
-      }, (error) => {
-        console.log(error.text);
-      });
-// //email send end
+    //     //email send start
+    //     emailjs.sendForm('service_us5ym9h', 'template_h1u66ie', form.current, 'oYkFvry-qBnIFFcph')
+    //       .then((result) => {
+    //         console.log(result.text);
+    //         console.log("email has been sent");
+    //       }, (error) => {
+    //         console.log(error.text);
+    //       });
+    // //email send end
 
 
     if (!name || !email) {
@@ -163,7 +164,7 @@ var MIN_HEIGHT = 1080;
         const imageRef = ref(storage, `wmh-india/images/${image.file.name}`);
 
 
-     // progress bar code start    
+        // progress bar code start    
         const uploadTask = uploadBytesResumable(imageRef, image.file);
 
         // Listen for state changes, errors, and completion of the upload.
@@ -173,7 +174,7 @@ var MIN_HEIGHT = 1080;
             var progress = Math.round(
               (snapshot.bytesTransferred / snapshot.totalBytes) * 100
             );
-            getProgressval(progress);     
+            getProgressval(progress);
             console.log("Upload is " + progress + "% done");
             switch (snapshot.state) {
               case "paused":
@@ -203,10 +204,10 @@ var MIN_HEIGHT = 1080;
           () => {
             // Upload completed successfully, now we can get the download URL
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              document.getElementsByClassName("progress")[0].style.display="none";
-              document.getElementsByClassName("thank")[0].style.display="block";
-              document.getElementById("file-input").addEventListener("click" , () => {
-                document.getElementsByClassName("thank")[0].style.display="none";
+              document.getElementsByClassName("progress")[0].style.display = "none";
+              document.getElementsByClassName("thank")[0].style.display = "block";
+              document.getElementById("file-input").addEventListener("click", () => {
+                document.getElementsByClassName("thank")[0].style.display = "none";
               })
               console.log("File available at", downloadURL);
             });
@@ -214,7 +215,7 @@ var MIN_HEIGHT = 1080;
         );
         // progress bar show
         var prog = document.getElementsByClassName('progress')
-        prog[0].style.display="block";
+        prog[0].style.display = "block";
         // progress bar code end
 
 
@@ -266,45 +267,45 @@ var MIN_HEIGHT = 1080;
 
   return (
     <>
-     {/* <h1>Hello</h1> */}
+      {/* <h1>Hello</h1> */}
       <div className='container bg-dark w-75 main-contianer mt-3 res1'>
         <div className='row Pre p-5'>
           <div className='col-10 mx-auto'>
-              <div className='row' id="responsives1">
-               <form className="uniq" ref={form}>
+            <div className='row' id="responsives1">
+              <form className="uniq" ref={form}>
                 <div className='col-5' id="responsives1">
-                <input type="text" value={name} className="userinput" name="user_name"  required  placeholder='Enter Your Name:' onChange={handleNameChange}/>
+                  <input type="text" value={name} className="userinput" name="user_name" required placeholder='Enter Your Name:' onChange={handleNameChange} />
                 </div>
                 <div className='col-5' id="responsives1">
-                <input type="email" value={email} className="userinput u1" name="user_email"  required  placeholder='Enter Your Email:' onChange={handleEmailChange}/>
+                  <input type="email" value={email} className="userinput u1" name="user_email" required placeholder='Enter Your Email:' onChange={handleEmailChange} />
                 </div>
-                </form>
-                <div className='col-2 kk' id="responsives2">
-                  <input type="file" name="file-input" id="file-input" className="file-input__input" multiple onChange={handleImageChange}/>
-                  <label className="file-input__label" for="file-input" id="slects">
-                    <svg
-                      aria-hidden="true"
-                      focusable="false"
-                      data-prefix="fas"
-                      data-icon="upload"
-                      className="svg-inline--fa fa-upload fa-w-16"
-                      role="img"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
-                      ></path>
-                    </svg>
-                    <span>Choose Image</span></label>
-                    {/* <p className="text-danger" id="extance">Only jpg/jpeg or png file allowed</p> */}
-                </div> 
-              </div>  
+              </form>
+              <div className='col-2 kk' id="responsives2">
+                <input type="file" name="file-input" id="file-input" className="file-input__input" multiple onChange={handleImageChange} />
+                <label className="file-input__label" for="file-input" id="slects">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fas"
+                    data-icon="upload"
+                    className="svg-inline--fa fa-upload fa-w-16"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"
+                    ></path>
+                  </svg>
+                  <span>Choose Image</span></label>
+                {/* <p className="text-danger" id="extance">Only jpg/jpeg or png file allowed</p> */}
+              </div>
+            </div>
           </div>
-        </div> 
+        </div>
       </div>
-   
+
       <div>
         <div className='container bg-light w-75 main-contianer res1'>
           <div className='row load p-5'>
@@ -313,29 +314,40 @@ var MIN_HEIGHT = 1080;
                 {imageUploads.length > 0 && (
                   <div>
                     <div className="previews">
-                      
+
                       {imageUploads.map((image, index) => (
                         <div key={index} className="preview" id="war">
                           <img className="img-thumbnail m-3" src={image.preview} alt={image.file.name} />
                           <div className="inputfields" id="wars">
                             <input className="userinput s1" type="text" placeholder="Caption" value={image.caption} onChange={(event) => handleCaptionChange(event, index)} />
                             <input className="userinput  s1" type="text" placeholder="Credit" value={image.credit} onChange={(event) => handleCreditChange(event, index)} />
-                            <input className="userinput s1" type="text" placeholder="Model"  value={image.model} onChange={(event) => handleModelChange(event, index)} />
+                            <input className="userinput s1" type="text" placeholder="Model" value={image.model} onChange={(event) => handleModelChange(event, index)} />
                             <button className="btn btn-danger m-2 float-end delete-btn" onClick={() => handleDeleteClick(index)}><i className="bi bi-trash"></i></button>
-                          </div> 
-                        </div>                         
+                          </div>
+                        </div>
                       ))}
                     </div>
-                    <button className="btn btn-success float-end w-100" type="submit" id="mink" onClick={handleUploadClick}>Upload</button>        
+                    <div className="radio-btn">
+                      <span>Submitter holds the copyright or has the authority to submit from the copyright owner?</span>
+                      <div className="form-check form-check-inline ms-2">
+                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required />
+                        <label className="form-check-label" htmlFor="inlineRadio1">Yes</label>
+                      </div>
+                      <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required />
+                        <label className="form-check-label" htmlFor="inlineRadio2">No</label>
+                      </div>
+                    </div>
+                    <button className="btn btn-success float-end w-100" type="submit" id="mink" onClick={handleUploadClick}>Upload</button>
                   </div>
-                  
+
                 )}
               </div>
               {/* {uploadSuccess && ( */}
-                <div>
-                  <p className="text-success text-center thank">Thank you for your submission. Our team will email you back within 3-5 working days. In case of any queries, please feel free to reach us at <a href="mailto:submissions@wmhindia.com">submissions@wmhindia.com</a><br/>
+              <div>
+                <p className="text-success text-center thank">Thank you for your submission. Our team will email you back within 3-5 working days. In case of any queries, please feel free to reach us at <a href="mailto:submissions@wmhindia.com">submissions@wmhindia.com</a><br />
                 </p>
-                </div>
+              </div>
               {/* )} */}
             </div>
           </div>
