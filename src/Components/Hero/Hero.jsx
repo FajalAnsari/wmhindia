@@ -6,6 +6,7 @@ import { ref, uploadBytes, getDownloadURL, uploadBytesResumable } from "firebase
 import { collection, addDoc } from "firebase/firestore";
 import { storage, db } from "../firebase-config";
 import { toast } from 'react-toastify';
+import Submission_detail from "../Submission_detail";
 
 
 
@@ -154,13 +155,13 @@ function readImageFile(file) {
 
 
     //     //email send start
-    //     emailjs.sendForm('service_us5ym9h', 'template_h1u66ie', form.current, 'oYkFvry-qBnIFFcph')
-    //       .then((result) => {
-    //         console.log(result.text);
-    //         console.log("email has been sent");
-    //       }, (error) => {
-    //         console.log(error.text);
-    //       });
+        // emailjs.sendForm('service_us5ym9h', 'template_h1u66ie', form.current, 'oYkFvry-qBnIFFcph')
+        //   .then((result) => {
+        //     console.log(result.text);
+        //     console.log("email has been sent");
+        //   }, (error) => {
+        //     console.log(error.text);
+        //   });
     // //email send end
 
 
@@ -337,6 +338,7 @@ function readImageFile(file) {
         <div className='container bg-light w-75 main-contianer res1'>
           <div className='row load p-5'>
             <div className='col-10 mx-auto'>
+              
               <div className='row img-form-container ' id="formji">
                 {imageUploads.length > 0 && (
                   <div>
@@ -355,7 +357,7 @@ function readImageFile(file) {
                       ))}
                     </div>
                      <div className="radio-btn p-3">
-                      <span className="fs-6 fw-bold  text-success">Submitter holds the copyright or has the authority to submit from the copyright owner?</span>
+                      <span className="fs-6 fw-bold  text-success">Are you 18+ and do you own the copyright or have the authority to submit the image?</span>
                       <div className="form-check form-check-inline ms-2">
                         <input className="form-check-input" type="radio" name="inlineRadioOptions"  id="summer" value="option1" required />
                         <label className="form-check-label" htmlFor="inlineRadio1">Yes</label>
@@ -376,10 +378,12 @@ function readImageFile(file) {
                 </p>
               </div>
               {/* )} */}
+              
             </div>
+            <Submission_detail/>
           </div>
           {/* progress bar */}
-
+          
           <div className="progress">
             <div
               className="progress-bar hidebar"
